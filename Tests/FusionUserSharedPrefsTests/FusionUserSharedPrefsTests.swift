@@ -1,11 +1,11 @@
 import XCTest
-@testable import SharedPreferences
+@testable import FusionUserSharedPrefs
 
-final class SharedPreferencesTests: XCTestCase {
+final class FusionUserSharedPrefsTests: XCTestCase {
     func testExample() throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct
         // results.
-        XCTAssertEqual(SharedPreferences().text, "Hello, World!")
+        
     }
 }
