@@ -1,1 +1,3 @@
-## FusionSharedPreferences
+# FusionUserSharedPrefs
+
+Wrapper of Swift UserDefaults
