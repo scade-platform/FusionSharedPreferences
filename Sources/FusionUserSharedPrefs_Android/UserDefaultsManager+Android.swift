@@ -74,8 +74,8 @@ public class UserDefaultsManager: Object, UserDefaultsManagerProtocol,
     }
     
     public func removeKey(key: String) {
-        UserDefaults.standard.removeObject(forKey: key)
-        UserDefaults.standard.synchronize()
+       delegateEditor!.remove(key: key)
+       delegateEditor!.commit()
     }
     
     public func removeAll() {
