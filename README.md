@@ -10,9 +10,21 @@ The example code demonstrates how to save and retrieve a simple string value usi
 
 
 ### iOS
+
+In the iOS example, the UserDefaults are accessed via the UserDefaults.standard instance. The string value is saved using the `set(_:forKey:)` method, and retrieved using the `string(forKey:)` method.
+
 ```swift
 let defaults = UserDefaults.standard
 defaults.set(value, forKey: "myKey")
 let retrievedValue = defaults.string(forKey: "myKey")
+```
+
+### Android
+In the Android example, the SharedPreferences are accessed via the `getSharedPreferences()` method. The string value is saved using the `edit()` method to get an instance of the SharedPreferences.Editor class. The value is then saved using the putString() method and committed using the `commit()` method. To retrieve the value, we simply call the `getString()` method.
+
+```java
+SharedPreferences sharedPreferences = getSharedPreferences("MySharedPref", MODE_PRIVATE);
+SharedPreferences.Editor myEdit = sharedPreferences.edit();
+myEdit.putString("name", name.getText().toString());
 ```
 
