@@ -6,8 +6,7 @@ This repository provides an example of how to use UserDefaults in iOS and Shared
 To get started, simply clone or download the repository and open the project in SCADE editor. Select your target as `iOS` or `Android` as per the requirement.
 
 ## How to Use
-The example code demonstrates how to save and retrieve a simple string value using UserDefaults and SharedPreferences. In both platforms, the key-value pair is saved when the user taps a "Save" button and retrieved when the user taps a "Load" button.
-
+The example code demonstrates how to save and retrieve a simple string value using UserDefaults and SharedPreferences. In both platforms, the key-value pair is saved and fetched using the sample code snippet. 
 
 ### iOS
 
@@ -37,7 +36,31 @@ myEdit.putString("name", name.getText().toString());
  #endif
 
  #if os(Android)
+ import Android
+ import AndroidContent
+  
+ weak var delegateEditor: SharedPreferencesEditorProxyProtocol?
+ 
+ public func putInt(value: Int32, key: String) {
+        let val32:Int32 = value
+        delegateEditor!.putInt(key: key, value: val32)
+        delegateEditor!.commit()
+ }
 
+ public func putString(value: String, key: String) {
+        delegateEditor!.putString(key: key, value: value)
+        delegateEditor!.commit()
+ }
+
+ public func getInt(key: String) -> Int32 {
+        let intValue:Int32 = (delegate?.getInt(key: key, defValue: 0)) ?? 0
+        return intValue
+ }
+
+ public func getString(key: String) -> String {
+        let strValue:String = delegate?.getString(key: key, defValue: "defvalueforgetstring")  ?? ""
+        return strValue
+ }
  #endif
 
 ```
