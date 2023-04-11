@@ -8,3 +8,11 @@ To get started, simply clone or download the repository and open the project in 
 ## How to Use
 The example code demonstrates how to save and retrieve a simple string value using UserDefaults and SharedPreferences. In both platforms, the key-value pair is saved when the user taps a "Save" button and retrieved when the user taps a "Load" button.
 
+
+### iOS
+```swift
+let defaults = UserDefaults.standard
+defaults.set(value, forKey: "myKey")
+let retrievedValue = defaults.string(forKey: "myKey")
+```
+
