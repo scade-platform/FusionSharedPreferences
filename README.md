@@ -31,6 +31,13 @@ myEdit.putString("name", name.getText().toString());
 ## Using with SCADE IDE
 
 ```swift
+ #if os(iOS)
  UserDefaults.standard.set(email, forKey: "email")
  UserDefaults.standard.integer(forKey: key) ?? 0
+ #endif
+
+ #if os(Android)
+
+ #endif
+
 ```
