@@ -64,3 +64,5 @@ myEdit.putString("name", name.getText().toString());
  #endif
 
 ```
+## Conclusion
+UserDefaults and SharedPreferences are simple and useful tools for storing key-value data in your applications. This repository provides a basic example of how to use them in both iOS and Android using Swift in SCADE editor. Feel free to use this code as a starting point for your own projects using Swift!
