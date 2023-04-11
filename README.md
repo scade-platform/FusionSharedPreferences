@@ -28,3 +28,9 @@ SharedPreferences.Editor myEdit = sharedPreferences.edit();
 myEdit.putString("name", name.getText().toString());
 ```
 
+## Using with SCADE IDE
+
+```swift
+ UserDefaults.standard.set(email, forKey: "email")
+ UserDefaults.standard.integer(forKey: key) ?? 0
+```
